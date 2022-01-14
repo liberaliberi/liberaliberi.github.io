@@ -5,8 +5,9 @@ const nextConfig = {
   ...process.env.NODE_ENV ==="production" && {
     images: {
       loader: "imgix",
-      path: "https://liberaliberi.github.io/", // 수정 필요
+      path: "https://liberaliberi.github.io/",
     },
+    assetPrefix: 'https://liberaliberi.github.io/'
   },
   exportPathMap: async function (
     defaultPathMap,
