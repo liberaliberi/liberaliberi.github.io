@@ -4,7 +4,7 @@ import KaKaoHeaderHoc from "./header";
 import kaKaoHeaderHoc from "./header";
 
 const redirectUri = "https://liberaliberi.github.io";
-
+const imageUrl = "https://photos.app.goo.gl/Ej8ptuCF4m3iYC6t5";
 // 후에 props로 받아야할 요소들
 // interface kaKaoShareButtonProps {
 //     title: string;
@@ -22,8 +22,7 @@ export default function KakaoShareButton() {
         content: {
           title: "custom 하게 변경되어야 함",
           description: "custom하게 변경되어야 함",
-          imageUrl:
-            "http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png",
+          imageUrl,
           link: {
             mobileWebUrl: redirectUri,
             webUrl: redirectUri,
