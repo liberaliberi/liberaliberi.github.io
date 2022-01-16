@@ -1,6 +1,6 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 
-import { event } from '../../components/react-ga/handler';
+import { event } from "../../components/react-ga/handler";
 
 import { question } from "./question";
 
@@ -20,15 +20,13 @@ const reducer = (state: number, action: "NEXT" | "FINISH") => {
 
 export default function Question() {
   const [state, dispatch] = useReducer(reducer, 1);
+  const [answer, setAnswer] = useState({});
 
   const collectData = (questionNumber: number) => {
-    event({
-      action: `${questionNumber}`,
-      params: {
-        [questionNumber]: question[questionNumber].answer
-      }
-    })
-  }
+    setAnswer({
+      [questionNumber]: question[questionNumber].answer,
+    });
+  };
 
   const onClick = () => {
     if (state !== question.length) {
@@ -36,6 +34,12 @@ export default function Question() {
       dispatch("NEXT");
       return;
     }
+    event({
+      action: 'user_click',
+      params: {
+       answer 
+      }
+    })
     dispatch("FINISH");
   };
 
