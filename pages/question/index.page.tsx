@@ -1,4 +1,6 @@
-import { useReducer, useCallback } from "react";
+import { useReducer } from "react";
+
+import { event } from '../../components/react-ga/handler';
 
 import { question } from "./question";
 
@@ -19,8 +21,18 @@ const reducer = (state: number, action: "NEXT" | "FINISH") => {
 export default function Question() {
   const [state, dispatch] = useReducer(reducer, 1);
 
+  const collectData = (questionNumber: number) => {
+    event({
+      action: `${questionNumber}`,
+      params: {
+        [questionNumber]: question[questionNumber].answer
+      }
+    })
+  }
+
   const onClick = () => {
     if (state !== question.length) {
+      collectData(state);
       dispatch("NEXT");
       return;
     }
