@@ -67,7 +67,7 @@ export default function Question() {
       <div>{question[state - 1].question}</div>
       <div>
         {question[state - 1].answer.map((el) => (
-          <button key={`Q${state}`} onClick={onClick}>
+          <button key={el} onClick={onClick}>
             {el}
           </button>
         ))}
