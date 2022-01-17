@@ -1,4 +1,10 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext } from "next/document";
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+} from "next/document";
 import Script from "next/script";
 
 class MyDocument extends Document {
@@ -13,9 +19,11 @@ class MyDocument extends Document {
         <Head>
           <script
             async
+            type="text/javascript"
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_KEY}`}
           />
           <script
+            type="text/javascript"
             dangerouslySetInnerHTML={{
               __html: `
         window.dataLayer = window.dataLayer || [];

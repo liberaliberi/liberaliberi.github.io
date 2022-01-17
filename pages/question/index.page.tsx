@@ -48,11 +48,12 @@ export default function Question() {
   };
 
   const onClick = () => {
-    if (state !== question.length) {
-      onChooseQuestion();
+    onChooseQuestion();
+
+    if (state === question.length) {
+      onFinish();
       return;
     }
-    onFinish();
   };
 
   useEffect(() => {
@@ -65,7 +66,7 @@ export default function Question() {
         {state} / {question.length}
       </div>
       <div>{question[state - 1].question}</div>
-      <div>
+      <div id="answer-list">
         {question[state - 1].answer.map((el) => (
           <button key={el} onClick={onClick}>
             {el}
