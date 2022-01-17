@@ -1,4 +1,5 @@
-import { useReducer, useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useReducer, useState } from "react";
 
 import { event } from "../../components/react-ga/handler";
 
@@ -19,29 +20,44 @@ const reducer = (state: number, action: "NEXT" | "FINISH") => {
 };
 
 export default function Question() {
+  const { push } = useRouter();
   const [state, dispatch] = useReducer(reducer, 1);
   const [answer, setAnswer] = useState({});
 
   const collectData = (questionNumber: number) => {
-    setAnswer({
+    setAnswer((origin) => ({
+      ...origin,
       [questionNumber]: question[questionNumber].answer,
+    }));
+  };
+
+  const onChooseQuestion = () => {
+    collectData(state);
+    dispatch("NEXT");
+  };
+
+  const onFinish = () => {
+    event({
+      action: "user_answer",
+      params: {
+        event_label: "answer",
+        value: answer,
+      },
     });
+    push("/result");
   };
 
   const onClick = () => {
     if (state !== question.length) {
-      collectData(state);
-      dispatch("NEXT");
+      onChooseQuestion();
       return;
     }
-    event({
-      action: 'user_click',
-      params: {
-       answer 
-      }
-    })
-    dispatch("FINISH");
+    onFinish();
   };
+
+  useEffect(() => {
+    () => dispatch("FINISH");
+  }, [dispatch]);
 
   return (
     <div>
@@ -51,7 +67,9 @@ export default function Question() {
       <div>{question[state - 1].question}</div>
       <div>
         {question[state - 1].answer.map((el) => (
-          <button onClick={onClick}>{el}</button>
+          <button key={`Q${state}`} onClick={onClick}>
+            {el}
+          </button>
         ))}
       </div>
     </div>

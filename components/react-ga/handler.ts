@@ -11,7 +11,13 @@ export const event = ({
   params,
 }: {
   action: string;
-  params: { answer: { [value: string]: string } };
+  params: {
+    event_label: string;
+    value: any;
+  };
 }) => {
-  (window as any).gtag("event", action, params);
+  (window as any).gtag("event", action, {
+    event_category: "garden_test",
+    ...params,
+  });
 };
