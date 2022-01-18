@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useReducer, useState } from "react";
+import { nanoid } from "nanoid";
 
 import { event } from "../../components/react-ga/handler";
 
@@ -24,41 +25,38 @@ export default function Question() {
   const [state, dispatch] = useReducer(reducer, 1);
   const [answer, setAnswer] = useState({});
 
-  const collectData = (questionNumber: number) => {
+  const collectData = (questionNumber: number, clickElementIndex: number) => {
     setAnswer((origin) => ({
       ...origin,
-      [questionNumber]: question[questionNumber].answer,
+      [`Q${questionNumber}`]: clickElementIndex,
     }));
   };
 
-  const onChooseQuestion = () => {
-    collectData(state);
-    dispatch("NEXT");
-  };
-
-  const onFinish = () => {
+  const onFinish = (questionNumber: number, clickElementIndex: number) => {
+    console.log(answer);
     event({
-      action: "user_answer",
+      action: nanoid(),
       params: {
-        event_label: "answer",
-        value: answer,
+        ...answer,
+        [`Q${questionNumber}`]: clickElementIndex,
       },
     });
+
     push("/result");
   };
 
-  const onClick = () => {
-    onChooseQuestion();
-
-    if (state === question.length) {
-      onFinish();
-      return;
-    }
+  const onClick = (questionNumber: number, clickElementIndex: number) => {
+    event({
+      action: `Question_${questionNumber}`,
+      params: { clickElementIndex },
+    });
+    collectData(questionNumber, clickElementIndex);
+    dispatch("NEXT");
   };
 
   useEffect(() => {
     () => dispatch("FINISH");
-  }, [dispatch]);
+  }, [dispatch, state]);
 
   return (
     <div>
@@ -67,8 +65,15 @@ export default function Question() {
       </div>
       <div>{question[state - 1].question}</div>
       <div id="answer-list">
-        {question[state - 1].answer.map((el) => (
-          <button key={el} onClick={onClick}>
+        {question[state - 1].answer.map((el, idx) => (
+          <button
+            key={el}
+            onClick={() =>
+              state !== question.length
+                ? onClick(state, idx + 1)
+                : onFinish(state, idx + 1)
+            }
+          >
             {el}
           </button>
         ))}

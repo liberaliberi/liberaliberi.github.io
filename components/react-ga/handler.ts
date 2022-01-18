@@ -6,18 +6,6 @@ export const pageview = (url: string) => {
 };
 
 // log specific events happening.
-export const event = ({
-  action,
-  params,
-}: {
-  action: string;
-  params: {
-    event_label: string;
-    value: any;
-  };
-}) => {
-  (window as any).gtag("event", action, {
-    event_category: "garden_test",
-    ...params,
-  });
+export const event = ({ action, params }: { action: string; params: any }) => {
+  (window as any).gtag("event", action, params);
 };
