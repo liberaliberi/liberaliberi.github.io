@@ -9,17 +9,18 @@ import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <SEOHead>
+    <>
+      <SEOHead pageName="나의 가든성향은?" />
+      <div className={styles.container}>
+        <main className={styles.main}>
           <KakakoBtn />
           <FBBtn />
           <Link href="/question">
             <a>정원성향 테스트 하러가기</a>
           </Link>
-        </SEOHead>
-      </main>
-    </div>
+        </main>
+      </div>
+    </>
   );
 };
 

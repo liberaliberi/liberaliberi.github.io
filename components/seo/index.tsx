@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { Component } from "react";
 import Head from "next/head";
 
 // import seo from "constants/seo";
@@ -10,7 +10,7 @@ import Head from "next/head";
 //   NAVER_SITE_VERIFICATION,
 // } = seo;
 
-const APP_NAME = "LIBERA-LIBERI";
+const APP_NAME = "liberaliberi";
 const DESCRIPTION =
   "나는 어떤 가든성향일까? 가든성향테스트 시작하기. 리베라리베리가 제공하는 나의 가든성향테스트 알아보기";
 const AUTHOR = "liberaliberi";
@@ -20,7 +20,7 @@ interface SEOHeadProps {
   description?: string;
   image?: string;
   fullUrl?: string;
-  children?: ReactNode;
+  children?: Array<Component>;
 }
 
 /**
@@ -38,7 +38,7 @@ const SEOHead = ({
   // fullUrl, // window.location.href
   children, // 별도로 추가 태그
 }: SEOHeadProps) => {
-  const pageTitle = pageName ? `${pageName} - Libera-Liberi}` : APP_NAME;
+  const pageTitle = pageName ? `${pageName} - ${APP_NAME}}` : APP_NAME;
   return (
     <Head>
       <title key="title">{pageTitle}</title>

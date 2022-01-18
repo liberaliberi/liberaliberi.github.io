@@ -21,8 +21,6 @@ export default function FBHeaderHoc({ children }: FBHeaderHocProps) {
   return (
     <>
       <Script
-        async
-        defer
         crossOrigin="anonymous"
         strategy="beforeInteractive"
         src="https://connect.facebook.net/en_US/sdk.js"
