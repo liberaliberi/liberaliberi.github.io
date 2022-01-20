@@ -85,6 +85,7 @@ const SEOHead = ({
       <meta key="og:site_name" property="og:site_name" content={APP_NAME} />
       <meta key="og:locale" property="og:locale" content="ko_KR" />
 
+      <link rel="canonical" href="http://liberaliberi.github.io/"></link>
       {/* 페이지에서 사용할 헤더 추가 */}
       {children}
     </Head>
