@@ -1,0 +1,16 @@
+.logo {
+  text-align: center;
+  width: 10.7rem;
+  height: 2.3rem;
+  font-weight: 700;
+  font-size: 2.1rem;
+  color: #c1c1c1;
+  font-family: THEGaeideuk;
+  border-radius: 5px;
+  margin: 8.1055vh 0;
+
+  @media (max-width: 768px) {
+    margin: 5.9859vh 0;
+    font-size: 1.4rem;
+  }
+}

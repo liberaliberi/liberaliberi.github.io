@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 
 import SEOHead from "../components/seo";
+import { Logo } from "../components/logo";
 import styles from "../styles/Home.module.scss";
 
 const Home: NextPage = () => {
@@ -13,7 +14,7 @@ const Home: NextPage = () => {
         image="/start-image.png"
       />
       <div className={styles.container}>
-        <div className={styles.startAuthor}>Libera Liberi</div>
+        <Logo />
         <div className={styles.descLayout}>
           <p className={styles.descLayout__description}>나는 어떤</p>
           <p className={styles.descLayout__description}>정원이 어울릴까?</p>
@@ -32,7 +33,7 @@ const Home: NextPage = () => {
             />
           </picture>
         </div>
-        <Link href="/question">
+        <Link href="/garden-test">
           <button className={styles.startButton}>
             <a>테스트 시작하기</a>
           </button>

@@ -4,8 +4,11 @@ import { nanoid } from "nanoid";
 
 import { event } from "../../components/react-ga/handler";
 
-import { question, GardenTendencyType } from "./question";
-import loadConfig from "next/dist/server/config";
+import { question } from "./question";
+import { ChoiceButton } from "../../components/button/choice";
+import { QuestionNumber } from "../../components/question-number";
+import styles from "../../styles/question.module.scss";
+import { Logo } from "../../components/logo";
 
 type CounterType = {
   [key: string]: number;
@@ -120,16 +123,19 @@ export default function Question() {
   }, [dispatch, state, question]);
 
   return (
-    <div>
+    <div className={styles.gardenTest}>
       {state !== question.length ? (
         <>
-          <div>
-            {state + 1} / {question.length}
+          <div className={styles.gardenTest__step}>
+            {/* {state + 1} / {question.length} */}
+            <QuestionNumber currentNumber={state + 1} />
           </div>
-          <div>{question[state]?.question}</div>
-          <div id="answer-list">
+          <div className={styles.gardenTest__question}>
+            {question[state]?.question}
+          </div>
+          <div className={styles.gardenTest__btn}>
             {question[state]?.answer.map((el, idx) => (
-              <button
+              <ChoiceButton
                 key={typeof el === "string" ? el : el.choice}
                 onClick={() =>
                   onClick(
@@ -139,8 +145,11 @@ export default function Question() {
                 }
               >
                 {typeof el === "string" ? el : el.choice}
-              </button>
+              </ChoiceButton>
             ))}
+          </div>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Logo />
           </div>
         </>
       ) : (
