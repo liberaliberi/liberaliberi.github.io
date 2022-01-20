@@ -34,7 +34,7 @@ const SEOHead = ({
   pageName, // * 페이지 이름
   // title = APP_NAME // pageName이 없을 때 사용할 페이지 타이틀
   description = DESCRIPTION, // * 페이지 설명
-  // image = seo.MAIN_IMAGE, // * 페이지 대표 이미지
+  image, // * 페이지 대표 이미지
   // fullUrl, // window.location.href
   children, // 별도로 추가 태그
 }: SEOHeadProps) => {
@@ -52,7 +52,7 @@ const SEOHead = ({
         itemProp="description"
         content={description}
       />
-      <meta key="itemprop-image" itemProp="image" content="" />
+      <meta key="itemprop-image" itemProp="image" content={image} />
 
       {/* 쿼리스트링에 따라 다른 페이지가 표시되므로 현재 페이지의 full URL을 넣어준다 */}
       {/* {fullUrl && <link key="canonical" rel="canonical" href={fullUrl} />} */}

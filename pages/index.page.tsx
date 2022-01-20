@@ -1,24 +1,42 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Link from "next/link";
 
-import KakakoBtn from "../components/kakao-share";
-import FBBtn from "../components/fb-share";
 import SEOHead from "../components/seo";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 
 const Home: NextPage = () => {
   return (
     <>
-      <SEOHead pageName="나의 가든성향은?" />
+      <SEOHead
+        pageName="나는 어떤 정원이 어울릴까?"
+        description="정원성향 테스트"
+        image="/start-image.png"
+      />
       <div className={styles.container}>
-        <main className={styles.main}>
-          <KakakoBtn />
-          <FBBtn />
-          <Link href="/question">
-            <a>정원성향 테스트 하러가기</a>
-          </Link>
-        </main>
+        <div className={styles.startAuthor}>Libera Liberi</div>
+        <div className={styles.descLayout}>
+          <p className={styles.descLayout__description}>나는 어떤</p>
+          <p className={styles.descLayout__description}>정원이 어울릴까?</p>
+        </div>
+        <h1 className={styles.startTitle}>정원 성향 테스트</h1>
+        <div className={styles.startImage}>
+          <picture>
+            <source srcSet="/start-image.avif" />
+            <source srcSet="/start-image.webp" />
+            <img
+              className="start-image"
+              src="/start-image.png"
+              alt=""
+              width="100%"
+              height="100%"
+            />
+          </picture>
+        </div>
+        <Link href="/question">
+          <button className={styles.startButton}>
+            <a>테스트 시작하기</a>
+          </button>
+        </Link>
       </div>
     </>
   );
