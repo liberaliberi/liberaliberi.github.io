@@ -38,7 +38,7 @@ const SEOHead = ({
   // fullUrl, // window.location.href
   children, // 별도로 추가 태그
 }: SEOHeadProps) => {
-  const pageTitle = pageName ? `${pageName} - ${APP_NAME}}` : APP_NAME;
+  const pageTitle = pageName ? `${pageName} - ${APP_NAME}` : APP_NAME;
   return (
     <Head>
       <title key="title">{pageTitle}</title>
@@ -52,7 +52,11 @@ const SEOHead = ({
         itemProp="description"
         content={description}
       />
-      <meta key="itemprop-image" itemProp="image" content={image} />
+      <meta
+        key="itemprop-image"
+        itemProp="image"
+        content={`https://liberaliberi.github.io/${image}`}
+      />
 
       {/* 쿼리스트링에 따라 다른 페이지가 표시되므로 현재 페이지의 full URL을 넣어준다 */}
       {/* {fullUrl && <link key="canonical" rel="canonical" href={fullUrl} />} */}
