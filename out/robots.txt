@@ -1,5 +1,5 @@
 User-agent: Yeti
 Allow:/
-User-agent: Googlebot
+User-agent: googlebot
 Allow:/
 Sitemap: https://liberliberi.github.io/sitemap.xml
