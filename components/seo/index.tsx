@@ -10,7 +10,7 @@ import Head from "next/head";
 //   NAVER_SITE_VERIFICATION,
 // } = seo;
 
-const APP_NAME = "liberaliberi";
+const APP_NAME = "리베라리베리";
 const DESCRIPTION =
   "나는 어떤 가든성향일까? 가든성향테스트 시작하기. 리베라리베리가 제공하는 나의 가든성향테스트 알아보기";
 const AUTHOR = "liberaliberi";
@@ -86,7 +86,7 @@ const SEOHead = ({
       {/* Twitter */}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={pageTitle} />
-      <meta name="twitter:description" content={DESCRIPTION} />
+      <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={DOMAIN} />
       <meta name="twitter:domain" content="liberaliberi" />
 
