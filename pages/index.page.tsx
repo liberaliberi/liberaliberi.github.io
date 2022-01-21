@@ -22,8 +22,8 @@ const Home: NextPage = () => {
         <h1 className={styles.startTitle}>정원 성향 테스트</h1>
         <div className={styles.startImage}>
           <picture>
-            <source srcSet="/start-image.avif" />
-            <source srcSet="/start-image.webp" />
+            <source srcSet="/start-image.avif" type="image/avif" />
+            <source srcSet="/start-image.webp" type="image/webp" />
             <img
               className="start-image"
               src="/start-image.png"
