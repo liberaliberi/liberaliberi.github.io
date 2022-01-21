@@ -1,16 +1,16 @@
 import type { NextPage } from "next";
-import Link from "next/link";
 
 import SEOHead from "../components/seo";
 import { Logo } from "../components/logo";
 import styles from "../styles/Home.module.scss";
+import { LinkButton } from "../components/button/link";
 
 const Home: NextPage = () => {
   return (
     <>
       <SEOHead
-        pageName="나는 어떤 정원이 어울릴까?"
-        description="정원성향 테스트"
+        pageName="정원성향 테스트"
+        description="나는 어떤 정원이 어울릴까"
         image="/start-image.png"
       />
       <div className={styles.container}>
@@ -33,11 +33,9 @@ const Home: NextPage = () => {
             />
           </picture>
         </div>
-        <Link href="/garden-test">
-          <button className={styles.startButton}>
-            <a>테스트 시작하기</a>
-          </button>
-        </Link>
+        <div className={styles.startBtn}>
+          <LinkButton href="/garden-test" name="테스트 시작하기" />
+        </div>
       </div>
     </>
   );

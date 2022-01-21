@@ -14,6 +14,7 @@ const APP_NAME = "liberaliberi";
 const DESCRIPTION =
   "나는 어떤 가든성향일까? 가든성향테스트 시작하기. 리베라리베리가 제공하는 나의 가든성향테스트 알아보기";
 const AUTHOR = "liberaliberi";
+const DOMAIN = "https://liberaliberi.github.io";
 
 interface SEOHeadProps {
   pageName?: string;
@@ -55,11 +56,8 @@ const SEOHead = ({
       <meta
         key="itemprop-image"
         itemProp="image"
-        content={`https://liberaliberi.github.io/${image}`}
+        content={`${DOMAIN}/${image}`}
       />
-
-      {/* 쿼리스트링에 따라 다른 페이지가 표시되므로 현재 페이지의 full URL을 넣어준다 */}
-      {/* {fullUrl && <link key="canonical" rel="canonical" href={fullUrl} />} */}
 
       {/* google search console */}
       <meta
@@ -73,10 +71,10 @@ const SEOHead = ({
       />
 
       {/* opengraph Meta Tags */}
-      {/* {fullUrl && <meta key="og:url" property="og:url" content={fullUrl} />} */}
+      {DOMAIN && <meta key="og:url" property="og:url" content={DOMAIN} />}
       <meta key="og:type" property="og:type" content="website" />
       <meta key="og:title" property="og:title" content={pageTitle} />
-      {/* <meta key="og:image" property="og:image" content="" /> */}
+      <meta key="og:image" property="og:image" content={`${DOMAIN}/${image}`} />
       <meta
         key="og:description"
         property="og:description"
@@ -85,7 +83,17 @@ const SEOHead = ({
       <meta key="og:site_name" property="og:site_name" content={APP_NAME} />
       <meta key="og:locale" property="og:locale" content="ko_KR" />
 
-      <link rel="canonical" href="http://liberaliberi.github.io/"></link>
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={pageTitle} />
+      <meta name="twitter:description" content={DESCRIPTION} />
+      <meta name="twitter:image" content={DOMAIN} />
+      <meta name="twitter:domain" content="liberaliberi" />
+
+      {/*  Naver html markup optimization */}
+      <meta name="robots" content="index,follow" />
+      {/* 쿼리스트링에 따라 다른 페이지가 표시되므로 현재 페이지의 full URL을 넣어준다 */}
+      {DOMAIN && <link key="canonical" rel="canonical" href={DOMAIN} />}
       {/* 페이지에서 사용할 헤더 추가 */}
       {children}
     </Head>
