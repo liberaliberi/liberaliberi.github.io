@@ -1,15 +1,6 @@
 import React, { Component } from "react";
 import Head from "next/head";
 
-// import seo from "constants/seo";
-
-// const {
-//   DESCRIPTION,
-//   AUTHOR,
-//   GOOGLE_SITE_VERIFICATION,
-//   NAVER_SITE_VERIFICATION,
-// } = seo;
-
 const APP_NAME = "리베라리베리";
 const DESCRIPTION =
   "나는 어떤 가든성향일까? 정원성향테스트 시작하기. 나의 정원성향테스트 알아보기";
@@ -36,7 +27,7 @@ const SEOHead = ({
   // title = APP_NAME // pageName이 없을 때 사용할 페이지 타이틀
   description = DESCRIPTION, // * 페이지 설명
   image, // * 페이지 대표 이미지
-  // fullUrl, // window.location.href
+  fullUrl = DOMAIN, // window.location.href
   children, // 별도로 추가 태그
 }: SEOHeadProps) => {
   const pageTitle = pageName ? `${pageName} - ${APP_NAME}` : APP_NAME;
@@ -71,7 +62,6 @@ const SEOHead = ({
       />
 
       {/* opengraph Meta Tags */}
-      {DOMAIN && <meta key="og:url" property="og:url" content={DOMAIN} />}
       <meta key="og:type" property="og:type" content="website" />
       <meta key="og:title" property="og:title" content={pageTitle} />
       <meta key="og:image" property="og:image" content={`${DOMAIN}/${image}`} />
@@ -82,13 +72,13 @@ const SEOHead = ({
       />
       <meta key="og:site_name" property="og:site_name" content={APP_NAME} />
       <meta key="og:locale" property="og:locale" content="ko_KR" />
+      <meta property="og:url" content={fullUrl} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={DOMAIN} />
-      <meta name="twitter:domain" content="liberaliberi" />
+      <meta name="twitter:image" content={`${DOMAIN}/${image}`} />
 
       {/*  Naver html markup optimization */}
       <meta name="robots" content="index,follow" />

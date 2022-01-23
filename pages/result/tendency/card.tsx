@@ -13,8 +13,8 @@ export default function TendencyCard({ imgUrl, title }: TendencyCardProps) {
         <div className={styles.gardenTendency__img}>
           <picture>
             {/* <source srcSet={`${imgUrl}.avif`} type="image/avif" /> */}
-            {/* <source srcSet="/start-image.webp" type="image/webp" /> */}
-            <img width="100%" height="100%" alt="" src={`${imgUrl}.webp`} />
+            <source srcSet={`${imgUrl}.webp`} type="image/webp" />
+            <img width="100%" height="100%" alt="" src={`${imgUrl}.png`} />
           </picture>
         </div>
       ) : (

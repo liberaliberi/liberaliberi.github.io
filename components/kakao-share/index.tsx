@@ -21,7 +21,7 @@ export default function KakaoShareButton({ url }: KaKaoShareButtonProps) {
         content: {
           title: "정원성향 테스트 결과",
           description: "안녕하세요 리베라리베리 입니다.",
-          imageUrl: `${redirectUri}/${tendency}.webp`,
+          imageUrl: `${redirectUri}/${tendency}.png`,
           link: {
             mobileWebUrl: url,
             webUrl: url,

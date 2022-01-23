@@ -23,7 +23,7 @@ export default function Result({ tendency }: ResultProps) {
     <>
       <SEOHead
         fullUrl={`${process.env.NEXT_PUBLIC_DOMAIN}/result/${query.tendency}`}
-        image={`${query.tendency}.webp`}
+        image={`${query.tendency}.png`}
         pageName={tendency.name}
       />
       <div className={styles.result}>

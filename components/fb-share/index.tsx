@@ -12,7 +12,7 @@ export default function FBShareButton({ url }: FBShareButtonProps) {
     <FBHeaderHoc>
       <div
         className="fb-share-button"
-        data-href={process.env.NEXT_PUBLIC_DOMAIN}
+        data-href={url}
         data-layout="button"
       >
         <a
