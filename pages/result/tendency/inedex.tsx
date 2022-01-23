@@ -24,7 +24,7 @@ export default function Tendency({
           <TendencyCard imgUrl={`/${fitGarden}`} title="환상의 성향" />
         </span>
         <span>
-          <TendencyCard imgUrl={`/${badGarden}`} title="환장의 성향" />
+          <TendencyCard imgUrl={badGarden ? `/${badGarden}`: undefined} title="환장의 성향" />
         </span>
       </div>
     </>
