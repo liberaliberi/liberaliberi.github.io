@@ -24,6 +24,17 @@ function MyApp({ Component, pageProps }: AppProps) {
     };
   }, [router.events]);
 
+  useEffect(() => {
+    const agent = navigator.userAgent.toLowerCase();
+
+    if (
+      (navigator.appName == "Netscape" && agent.indexOf("trident") != -1) ||
+      agent.indexOf("msie") != -1
+    ) {
+      alert("인터넷 익스플로러는 지원하지 않습니다");
+    }
+  }, []);
+
   return (
     <>
       <Head>

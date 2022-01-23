@@ -7,11 +7,13 @@ interface DescriptionProps {
 export default function Description({ descriptions }: DescriptionProps) {
   return (
     <>
-      {descriptions.map((el) => (
-        <p key={el} className={styles.description}>
-          {el}
-        </p>
-      ))}
+      <div>
+        {descriptions.map((el) => (
+          <p className={styles.title__description} key={el}>
+            {el}
+          </p>
+        ))}
+      </div>
     </>
   );
 }

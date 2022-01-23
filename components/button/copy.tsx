@@ -1,10 +1,9 @@
 import Image from "next/image";
 
-export const CopyButton = () => {
+export const CopyButton = ({ url }: { url: string }) => {
   const copyUrl = () => {
-    const copiedUrl = "https://liberaliberi.github.io";
     navigator.clipboard
-      .writeText(copiedUrl)
+      .writeText(url)
       .then(() => {
         alert(`클립보드에 복사했습니다.`);
       })

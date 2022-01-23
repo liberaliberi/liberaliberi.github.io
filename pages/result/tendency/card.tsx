@@ -7,9 +7,15 @@ interface TendencyCardProps {
 
 export default function TendencyCard({ imgUrl, title }: TendencyCardProps) {
   return (
-    <div className={styles.card}>
-      <div className={styles.card__tendency}>{title}</div>
-      <div>{/* 이미지 넣기 */}</div>
-    </div>
+    <>
+      <h3 className={styles.gardenTendency__title}>{title}</h3>
+      <div className={styles.gardenTendency__img}>
+        <picture>
+          {/* <source srcSet={`${imgUrl}.avif`} type="image/avif" /> */}
+          {/* <source srcSet="/start-image.webp" type="image/webp" /> */}
+          <img width="100%" height="100%" alt="" src={`${imgUrl}.webp`} />
+        </picture>
+      </div>
+    </>
   );
 }

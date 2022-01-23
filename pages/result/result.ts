@@ -16,7 +16,7 @@ export type Garden =
   | "mjgl"
   | "mjhl";
 
-interface Result {
+export interface UserTendency {
   name: string;
   description: string[];
   userGardenType: string;
@@ -25,7 +25,7 @@ interface Result {
 }
 
 type ResultType = {
-  [key: string]: Result;
+  [key: string]: UserTendency;
 };
 
 export const result: ResultType = {

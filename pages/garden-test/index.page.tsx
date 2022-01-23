@@ -103,7 +103,7 @@ export default function Question() {
     });
     const userGardenTendency = selectUserGardenTendency();
 
-    push({ pathname: "/result", query: { tendency: userGardenTendency } });
+    push(`/result/${userGardenTendency}`);
   };
 
   const onClick = (questionNumber: number, clickElementIndex: string) => {
@@ -149,17 +149,11 @@ export default function Question() {
             </ChoiceButton>
           ))}
         </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "4.7rem",
-          }}
-        >
+        <footer className={styles.footer}>
           <Logo />
-        </div>
+        </footer>
       </>
-      ){/* : ( */}
+      {/*) : ( */}
       {/* <>loading...</> */}
       {/* )} */}
     </div>

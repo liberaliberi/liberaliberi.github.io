@@ -12,9 +12,9 @@ import Head from "next/head";
 
 const APP_NAME = "리베라리베리";
 const DESCRIPTION =
-  "나는 어떤 가든성향일까? 가든성향테스트 시작하기. 리베라리베리가 제공하는 나의 가든성향테스트 알아보기";
+  "나는 어떤 가든성향일까? 정원성향테스트 시작하기. 나의 정원성향테스트 알아보기";
 const AUTHOR = "liberaliberi";
-const DOMAIN = "https://liberaliberi.github.io";
+const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN;
 
 interface SEOHeadProps {
   pageName?: string;

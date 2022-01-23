@@ -10,9 +10,9 @@ const nextConfig = {
   ...process.env.NODE_ENV ==="production" && {
     images: {
       loader: "imgix",
-      path: "https://liberaliberi.github.io/",
+      path: process.env.NEXT_PUBLIC_DOMAIN,
     },
-    assetPrefix: 'https://liberaliberi.github.io/'
+    assetPrefix: process.env.NEXT_PUBLIC_DOMAIN
   },
    sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
