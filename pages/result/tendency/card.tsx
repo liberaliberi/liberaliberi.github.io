@@ -9,7 +9,7 @@ export default function TendencyCard({ imgUrl, title }: TendencyCardProps) {
   return (
     <>
       <h3 className={styles.gardenTendency__title}>{title}</h3>
-      {imgUrl !== undefined ? (
+      {imgUrl  ? (
         <div className={styles.gardenTendency__img}>
           <picture>
             {/* <source srcSet={`${imgUrl}.avif`} type="image/avif" /> */}
