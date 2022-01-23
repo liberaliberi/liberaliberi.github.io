@@ -33,7 +33,9 @@ export default function Result({ tendency }: ResultProps) {
         </div>
         <HorizonBar />
         <section className={styles.section}>
-          <div className={styles.title}>당신의 성향과 어울리는</div>
+          <div className={styles.title} style={{ color: "#1c5843" }}>
+            당신의 성향과 어울리는
+          </div>
           <h1 className={styles.title__name}>{tendency.name}</h1>
           <Description descriptions={tendency.description} />
         </section>

@@ -17,7 +17,7 @@ export default function FBShareButton({ url }: FBShareButtonProps) {
       >
         <a
           target="_blank"
-          href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
+          href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(url)}`}
         >
           <Image width={46} height={46} src="/facebook.svg" loading="eager" />
         </a>
