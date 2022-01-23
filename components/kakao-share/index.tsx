@@ -1,16 +1,15 @@
 import { useEffect } from "react";
+import Image from "next/image";
+
 import KaKaoHeaderHoc from "./header";
 
-import kaKaoHeaderHoc from "./header";
-
 const redirectUri = "https://liberaliberi.github.io";
-const imageUrl = "https://photos.app.goo.gl/Ej8ptuCF4m3iYC6t5";
+const imageUrl = `${redirectUri}/start-image.png`;
 // 후에 props로 받아야할 요소들
 // interface kaKaoShareButtonProps {
 //     title: string;
 //     description: string
 // }
-
 
 export default function KakaoShareButton() {
   useEffect(() => {
@@ -20,8 +19,8 @@ export default function KakaoShareButton() {
         container: "#create-kakao-link-btn",
         objectType: "feed",
         content: {
-          title: "custom 하게 변경되어야 함",
-          description: "custom하게 변경되어야 함",
+          title: "정원성향 테스트 결과",
+          description: "안녕하세요 리베라리베리 입니다.",
           imageUrl,
           link: {
             mobileWebUrl: redirectUri,
@@ -42,10 +41,12 @@ export default function KakaoShareButton() {
   }, []);
   return (
     <KaKaoHeaderHoc>
-      <a id="create-kakao-link-btn">
-        <img
-          src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+      <a style={{ cursor: "pointer" }} id="create-kakao-link-btn">
+        <Image
+          src="/kakao-talk.svg"
           alt="카카오링크 보내기 버튼"
+          width={46}
+          height={46}
         />
       </a>
     </KaKaoHeaderHoc>

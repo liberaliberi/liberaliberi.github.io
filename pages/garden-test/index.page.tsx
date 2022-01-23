@@ -65,14 +65,15 @@ export default function Question() {
   const [state, dispatch] = useReducer(reducer, 0);
   const [data, setData] = useState({});
   const [counter, setCounter] = useReducer(countRecuder, {
+    // 이순서 유지
     m: 0,
     c: 0,
+    j: 0,
+    t: 0,
     g: 0,
     h: 0,
-    j: 0,
     k: 0,
     l: 0,
-    t: 0,
   });
 
   const selectUserGardenTendency = () => {
@@ -102,7 +103,7 @@ export default function Question() {
     });
     const userGardenTendency = selectUserGardenTendency();
 
-    push({ pathname: "/result", query: { a: userGardenTendency } });
+    push({ pathname: "/result", query: { tendency: userGardenTendency } });
   };
 
   const onClick = (questionNumber: number, clickElementIndex: string) => {
@@ -117,44 +118,50 @@ export default function Question() {
 
   useEffect(() => {
     if (state === question.length) {
-      setTimeout(onFinish, 3000);
+      onFinish();
     }
     () => dispatch("FINISH");
   }, [dispatch, state, question]);
 
   return (
     <div className={styles.gardenTest}>
-      {state !== question.length ? (
-        <>
-          <div className={styles.gardenTest__step}>
-            {/* {state + 1} / {question.length} */}
-            <QuestionNumber currentNumber={state + 1} />
-          </div>
-          <div className={styles.gardenTest__question}>
-            {question[state]?.question}
-          </div>
-          <div className={styles.gardenTest__btn}>
-            {question[state]?.answer.map((el, idx) => (
-              <ChoiceButton
-                key={typeof el === "string" ? el : el.choice}
-                onClick={() =>
-                  onClick(
-                    state + 1,
-                    typeof el === "string" ? `${idx + 1}` : el.tendency
-                  )
-                }
-              >
-                {typeof el === "string" ? el : el.choice}
-              </ChoiceButton>
-            ))}
-          </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <Logo />
-          </div>
-        </>
-      ) : (
-        <>loading...</>
-      )}
+      {/* {state !== question.length ? ( */}
+      <>
+        <div className={styles.gardenTest__step}>
+          {/* {state + 1} / {question.length} */}
+          <QuestionNumber currentNumber={state + 1} />
+        </div>
+        <div className={styles.gardenTest__question}>
+          {question[state]?.question}
+        </div>
+        <div className={styles.gardenTest__btn}>
+          {question[state]?.answer.map((el, idx) => (
+            <ChoiceButton
+              key={typeof el === "string" ? el : el.choice}
+              onClick={() =>
+                onClick(
+                  state + 1,
+                  typeof el === "string" ? `${idx + 1}` : el.tendency
+                )
+              }
+            >
+              {typeof el === "string" ? el : el.choice}
+            </ChoiceButton>
+          ))}
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "4.7rem",
+          }}
+        >
+          <Logo />
+        </div>
+      </>
+      ){/* : ( */}
+      {/* <>loading...</> */}
+      {/* )} */}
     </div>
   );
 }

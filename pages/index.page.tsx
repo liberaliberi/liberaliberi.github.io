@@ -14,6 +14,7 @@ const Home: NextPage = () => {
         image="/start-image.png"
       />
       <div className={styles.container}>
+        <div style={{ margin: "8.1055vh 0" }}></div>
         <Logo />
         <div className={styles.descLayout}>
           <p className={styles.descLayout__description}>나는 어떤</p>

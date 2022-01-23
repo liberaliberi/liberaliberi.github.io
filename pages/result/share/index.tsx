@@ -5,7 +5,7 @@ export default function Share() {
   return (
     <>
       <H2>내 결과 공유하기</H2>
-      <div>{/* 버튼 처넣기 */}</div>
+      <div></div>
     </>
   );
 }
