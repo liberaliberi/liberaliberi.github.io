@@ -40,7 +40,7 @@ export default function Result({ tendency }: ResultProps) {
         <section className={styles.section}>
           <Tendency
             userGardenTendency={tendency.userGardenType}
-            badGarden={tendency?.badGarden}
+            badGarden={tendency.badGarden}
             fitGarden={tendency.fitGarden}
           />
         </section>

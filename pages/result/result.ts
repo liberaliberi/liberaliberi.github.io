@@ -20,8 +20,8 @@ export interface UserTendency {
   name: string;
   description: string[];
   userGardenType: string;
-  fitGarden?: Garden;
-  badGarden?: Garden;
+  fitGarden: Garden;
+  badGarden: Garden | null;
 }
 
 type ResultType = {
@@ -55,7 +55,7 @@ export const result: ResultType = {
     ],
     userGardenType: "코티지가든, 트로피컬가든, 그라스가든, 리빙가든",
     fitGarden: "mjhk",
-    badGarden: undefined,
+    badGarden: null,
   },
   cthk: {
     name: "국도 지나다 본 고기가든",
@@ -216,7 +216,7 @@ export const result: ResultType = {
     ],
     userGardenType: "모던가든, 젠가든, 그라스가든, 리빙가든",
     fitGarden: "ctgk",
-    badGarden: undefined,
+    badGarden: null,
   },
   mjhk: {
     name: "차 한잔의 여유 허브정원",

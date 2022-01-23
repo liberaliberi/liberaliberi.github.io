@@ -7,7 +7,7 @@ import Card from "./card";
 interface TendencyProps {
   userGardenTendency: string;
   fitGarden?: string;
-  badGarden?: string;
+  badGarden: string | null;
 }
 
 export default function Tendency({
