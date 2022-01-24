@@ -37,7 +37,7 @@ const SEOHead = ({
       <meta key="meta-description" name="description" content={description} />
       <meta key="meta-author" name="author" content={AUTHOR} />
       <meta key="meta-title" name="title" content={pageTitle} />
-
+      <meta charSet="utf-8" />
       <meta key="itemprop-name" itemProp="name" content={pageTitle} />
       <meta
         key="itemprop-description"
