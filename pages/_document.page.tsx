@@ -22,6 +22,7 @@ class MyDocument extends Document {
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_KEY}`}
           />
           <script
+            defer
             type="text/javascript"
             dangerouslySetInnerHTML={{
               __html: `
@@ -36,15 +37,6 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
-          <noscript>
-            <iframe
-              src="https://www.googletagmanager.com/ns.html?id=GTM-WKFZX73"
-              height="0"
-              width="0"
-              style={{ display: "none", visibility: "hidden" }}
-            ></iframe>
-          </noscript>
-
           <Main />
           <NextScript />
         </body>

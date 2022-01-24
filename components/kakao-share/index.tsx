@@ -20,7 +20,8 @@ export default function KakaoShareButton({ url }: KaKaoShareButtonProps) {
         objectType: "feed",
         content: {
           title: "정원성향 테스트 결과",
-          description: "안녕하세요 리베라리베리 입니다.",
+          description:
+            "저의 정원성향이래요! 당신의 정원 성향도 궁금하지 않으신가요?",
           imageUrl: `${redirectUri}/${tendency}.png`,
           link: {
             mobileWebUrl: url,
@@ -29,7 +30,7 @@ export default function KakaoShareButton({ url }: KaKaoShareButtonProps) {
         },
         buttons: [
           {
-            title: "내 정원사이트 보러가기",
+            title: "나도 테스트 하러가기",
             link: {
               mobileWebUrl: redirectUri,
               webUrl: redirectUri,
@@ -39,15 +40,11 @@ export default function KakaoShareButton({ url }: KaKaoShareButtonProps) {
       });
     }
   }, []);
+
   return (
     <KaKaoHeaderHoc>
       <a style={{ cursor: "pointer" }} id="create-kakao-link-btn">
-        <Image
-          src="/kakao-talk.svg"
-          alt="카카오링크 보내기 버튼"
-          width={46}
-          height={46}
-        />
+        <Image src="/kakao-talk.svg" alt="kakao share" width={46} height={46} />
       </a>
     </KaKaoHeaderHoc>
   );

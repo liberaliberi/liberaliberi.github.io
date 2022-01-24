@@ -13,14 +13,17 @@ export const CopyButton = ({ url }: { url: string }) => {
   };
 
   return (
-    <img
-      style={{ cursor: "pointer" }}
-      width={46}
-      height={46}
-      role="button"
+    <button
+      style={{ cursor: "pointer", backgroundColor: "transparent", border: 0 }}
       onClick={copyUrl}
-      src="/link.svg"
-      alt="link"
-    />
+      className=".copyLink"
+    >
+      <Image
+        width={46}
+        height={46}
+        src="/link.svg"
+        alt="copy link"
+      />
+    </button>
   );
 };

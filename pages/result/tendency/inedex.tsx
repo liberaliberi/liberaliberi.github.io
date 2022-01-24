@@ -1,8 +1,6 @@
 import styles from "../../../styles/result.module.scss";
-import { H2 } from "../components/header";
-import TendencyCard from "./card";
 
-import Card from "./card";
+import TendencyCard from "./card";
 
 interface TendencyProps {
   userGardenTendency: string;
@@ -24,7 +22,7 @@ export default function Tendency({
           <TendencyCard imgUrl={`/${fitGarden}`} title="환상의 성향" />
         </span>
         <span>
-          <TendencyCard imgUrl={badGarden ? `/${badGarden}`: undefined} title="환장의 성향" />
+          <TendencyCard imgUrl={badGarden ? `/${badGarden}`: null} title="환장의 성향" />
         </span>
       </div>
     </>
