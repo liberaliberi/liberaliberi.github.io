@@ -2,4 +2,6 @@ User-agent: Yeti
 Allow:/
 User-agent: googlebot
 Allow:/
+User-agent: *
+Disallow: /garden-test/
 Sitemap: https://liberliberi.github.io/sitemap.xml

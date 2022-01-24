@@ -3,12 +3,13 @@ import { useEffect, useReducer, useState } from "react";
 import { nanoid } from "nanoid";
 
 import { event } from "../../components/react-ga/handler";
-
-import { question } from "./question";
 import { ChoiceButton } from "../../components/button/choice";
 import { QuestionNumber } from "../../components/question-number";
 import styles from "../../styles/question.module.scss";
 import { Logo } from "../../components/logo";
+import SeoHead from "../../components/seo";
+
+import { question } from "./question";
 
 type CounterType = {
   [key: string]: number;
@@ -124,38 +125,41 @@ export default function Question() {
   }, [dispatch, state, question]);
 
   return (
-    <div className={styles.gardenTest}>
-      {/* {state !== question.length ? ( */}
-      <>
-        <div className={styles.gardenTest__step}>
-          {/* {state + 1} / {question.length} */}
-          <QuestionNumber currentNumber={state + 1} />
-        </div>
-        <div className={styles.gardenTest__question}>
-          {question[state]?.question}
-        </div>
-        <div className={styles.gardenTest__btn}>
-          {question[state]?.answer.map((el, idx) => (
-            <ChoiceButton
-              key={typeof el === "string" ? el : el.choice}
-              onClick={() =>
-                onClick(
-                  state + 1,
-                  typeof el === "string" ? `${idx + 1}` : el.tendency
-                )
-              }
-            >
-              {typeof el === "string" ? el : el.choice}
-            </ChoiceButton>
-          ))}
-        </div>
-        <footer className={styles.footer}>
-          <Logo />
-        </footer>
-      </>
-      {/*) : ( */}
-      {/* <>loading...</> */}
-      {/* )} */}
-    </div>
+    <>
+      <SeoHead pageName="정원성향 테스트" />
+      <div className={styles.gardenTest}>
+        {/* {state !== question.length ? ( */}
+        <>
+          <div className={styles.gardenTest__step}>
+            {/* {state + 1} / {question.length} */}
+            <QuestionNumber currentNumber={state + 1} />
+          </div>
+          <div className={styles.gardenTest__question}>
+            {question[state]?.question}
+          </div>
+          <div className={styles.gardenTest__btn}>
+            {question[state]?.answer.map((el, idx) => (
+              <ChoiceButton
+                key={typeof el === "string" ? el : el.choice}
+                onClick={() =>
+                  onClick(
+                    state + 1,
+                    typeof el === "string" ? `${idx + 1}` : el.tendency
+                  )
+                }
+              >
+                {typeof el === "string" ? el : el.choice}
+              </ChoiceButton>
+            ))}
+          </div>
+          <footer className={styles.footer}>
+            <Logo />
+          </footer>
+        </>
+        {/*) : ( */}
+        {/* <>loading...</> */}
+        {/* )} */}
+      </div>
+    </>
   );
 }
