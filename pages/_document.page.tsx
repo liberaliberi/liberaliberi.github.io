@@ -18,6 +18,11 @@ class MyDocument extends Document {
         <Head>
           <script
             async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9853400986139329"
+            crossOrigin="anonymous"
+          ></script>
+          <script
+            async
             type="text/javascript"
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_KEY}`}
           />
