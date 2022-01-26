@@ -99,7 +99,7 @@ export default function Question() {
     event({
       action: nanoid(),
       params: {
-        data,
+        ...data,
       },
     });
     const userGardenTendency = selectUserGardenTendency();
