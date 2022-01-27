@@ -59,7 +59,7 @@ export default function Result({ tendency }: ResultProps) {
         </section>
         <footer className={styles.footer}>
           <LinkButton
-            href="/"
+            href="/introduction"
             name="나만의 쉽고 가까운 정원, 더 알아보러 가기"
           />
         </footer>

@@ -11,6 +11,7 @@
     "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && cp ./robots.txt out/robots.txt && cp ./sitemap.xml out/sitemap.xml && cp ./rss.xml out/rss.xml && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
+    "classnames": "^2.3.1",
     "nanoid": "^3.2.0",
     "next": "12.0.8",
     "react": "17.0.2",
