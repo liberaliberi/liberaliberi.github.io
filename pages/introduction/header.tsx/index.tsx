@@ -6,7 +6,7 @@ export default function Header() {
   const { push } = useRouter();
   return (
     <>
-      <h1 className={styles.header__title}>
+      <h1>
         쉽고 가까운 정원을 위한
         <br /> 변화의 시작
       </h1>

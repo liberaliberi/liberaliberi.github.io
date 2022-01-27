@@ -23,7 +23,7 @@ export default function Summary() {
   return (
     <>
       {summaryData.map(({ icon, summary, title }: SummaryTemplateProps) => (
-        <div style={{ margin: "0 auto" }}>
+        <div>
           <Template icon={icon} summary={summary} title={title} />
         </div>
       ))}
