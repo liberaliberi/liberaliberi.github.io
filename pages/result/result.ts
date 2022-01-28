@@ -22,6 +22,7 @@ export interface UserTendency {
   userGardenType: string;
   fitGarden: Garden;
   badGarden: Garden | null;
+  recommand: string;
 }
 
 type ResultType = {
@@ -42,6 +43,7 @@ export const result: ResultType = {
     userGardenType: "코티지가든, 트로피컬가든, 그라스가든, 키친가든",
     fitGarden: "mjgl",
     badGarden: "mthl",
+    recommand: "하우스텐보스",
   },
   ctgl: {
     name: "스카이캐슬 공중정원",
@@ -56,6 +58,7 @@ export const result: ResultType = {
     userGardenType: "코티지가든, 트로피컬가든, 그라스가든, 리빙가든",
     fitGarden: "mjhk",
     badGarden: null,
+    recommand: "싱가폴 PARKROYAL COLLECTION Pickering",
   },
   cthk: {
     name: "국도 지나다 본 고기가든",
@@ -69,6 +72,7 @@ export const result: ResultType = {
     userGardenType: "코티지가든, 트로피컬가든, 한국정원, 키친가든",
     fitGarden: "mjgl",
     badGarden: "cjgk",
+    recommand: "충북 제천 카우보이 그릴",
   },
   cthl: {
     name: "화, 목에만 보는 우리가족정원",
@@ -82,6 +86,7 @@ export const result: ResultType = {
     userGardenType: "코티지가든, 트로피컬가든, 한국정원, 리빙가든",
     fitGarden: "mjhk",
     badGarden: "mtgk",
+    recommand: "충남 천안 아름다운정원 화수목",
   },
   cjgk: {
     name: "산속 연구소 찌릿찌릿 기계정원",
@@ -95,6 +100,7 @@ export const result: ResultType = {
     userGardenType: "코티지가든, 젠가든, 한국정원, 키친가든",
     fitGarden: "mthl",
     badGarden: "cthl",
+    recommand: "광주시립미술관 메타가든",
   },
   cjgl: {
     name: "걷게 해줄게 꽃길 정원",
@@ -108,6 +114,7 @@ export const result: ResultType = {
     userGardenType: "코티지가든, 젠가든, 그라스가든, 리빙가든",
     fitGarden: "cjhl",
     badGarden: "cthk",
+    recommand: "영국 첼시플라워쇼",
   },
   cjhk: {
     name: "먹깨비 식량창고 쌈채소정원",
@@ -121,6 +128,7 @@ export const result: ResultType = {
     userGardenType: "코티지가든, 젠가든, 한국정원, 키친가든",
     fitGarden: "mtgl",
     badGarden: "mjhk",
+    recommand: "화성 감자밭",
   },
   cjhl: {
     name: "비밀가득, 향기만땅 찻잎정원",
@@ -135,6 +143,7 @@ export const result: ResultType = {
     userGardenType: "코티지가든, 젠가든, 한국정원, 리빙가든",
     fitGarden: "mthk",
     badGarden: "mjhl",
+    recommand: "제주 오설록 녹차밭",
   },
   mtgk: {
     name: "차가운 도시 속 루프탑 정원 ",
@@ -148,6 +157,7 @@ export const result: ResultType = {
     userGardenType: "모던가든, 트로피컬가든, 그라스가든, 키친가든",
     fitGarden: "cjgl",
     badGarden: "cthl",
+    recommand: "카더가든",
   },
   mtgl: {
     name: "방콕 어느 호텔 휴양정원",
@@ -162,6 +172,7 @@ export const result: ResultType = {
     userGardenType: "모던가든, 트로피컬가든, 그라스가든, 리빙가든",
     fitGarden: "ctgk",
     badGarden: "mjhk",
+    recommand: "차정원",
   },
   mthk: {
     name: "북촌 어느 골목길 소소한 파티정원",
@@ -176,6 +187,7 @@ export const result: ResultType = {
     userGardenType: "모던가든, 트로피컬가든, 한국정원, 키친가든",
     fitGarden: "cjgl",
     badGarden: "mjhl",
+    recommand: "은평 한옥마을",
   },
   mthl: {
     name: "최신식 식물재배기 트랜디정원",
@@ -190,6 +202,7 @@ export const result: ResultType = {
     userGardenType: "모던가든, 트로피컬가든, 한국정원, 리빙가든",
     fitGarden: "cjgk",
     badGarden: "mjhk",
+    recommand: "LG 틔운",
   },
   mjgk: {
     name: "쿨한척 민트정원",
@@ -204,6 +217,7 @@ export const result: ResultType = {
     userGardenType: "모던가든, 젠가든, 그라스가든, 키친가든",
     fitGarden: "ctgl",
     badGarden: "mtgl",
+    recommand: "대관령 하늘목장",
   },
   mjgl: {
     name: "나의 왕국에 초대하마, 왕실정원",
@@ -217,6 +231,7 @@ export const result: ResultType = {
     userGardenType: "모던가든, 젠가든, 그라스가든, 리빙가든",
     fitGarden: "ctgk",
     badGarden: null,
+    recommand: "춘천 제이드가든",
   },
   mjhk: {
     name: "차 한잔의 여유 허브정원",
@@ -230,6 +245,7 @@ export const result: ResultType = {
     userGardenType: "모던가든, 젠가든, 한국정원, 허브가든",
     fitGarden: "ctgl",
     badGarden: "cjgk",
+    recommand: "파주 뮌스터담",
   },
   mjhl: {
     name: "여긴어디 미스터리서클정원",
@@ -244,6 +260,7 @@ export const result: ResultType = {
     userGardenType: "모던가든, 젠가든, 한국정원, 리빙가든",
     fitGarden: "cthk",
     badGarden: "cjgl",
+    recommand: "이스터섬 주호민상",
   },
 };
 

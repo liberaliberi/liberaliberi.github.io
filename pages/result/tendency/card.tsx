@@ -18,7 +18,20 @@ export default function TendencyCard({ imgUrl, title }: TendencyCardProps) {
           </picture>
         </div>
       ) : (
-        <div className={styles.title__description}>없음</div>
+        <div className={styles.title__description}>
+          <p
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "17rem",
+              height: "17rem",
+              margin: "0 auto",
+            }}
+          >
+            모두와 잘 어울려요!
+          </p>
+        </div>
       )}
     </>
   );

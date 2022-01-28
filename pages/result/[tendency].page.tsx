@@ -12,6 +12,7 @@ import { result, UserTendency } from "./result";
 import Share from "./share";
 import Tendency from "./tendency/inedex";
 import Description from "./description";
+import Recommand from "./recommand";
 
 interface ResultProps {
   tendency: UserTendency;
@@ -48,10 +49,10 @@ export default function Result({ tendency }: ResultProps) {
           />
         </section>
         <section className={styles.section}>
-          <h2 className={styles.heading2}>
-            이런 당신을 취향 저격할 장소를 추천해드려요!
-          </h2>
-          <div>현재 준비중입니다!</div>
+          <Recommand
+            imgName={tendency.recommand}
+            imgUrl={`/recommand-${query.tendency}`}
+          />
         </section>
         <section className={styles.section}>
           <Share

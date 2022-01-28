@@ -14,6 +14,10 @@
     height: 8.3rem;
     margin: 12px 0;
   }
+
+  &:hover {
+    background-color: #1c5843;
+  }
 }
 
 .link {
@@ -30,5 +34,9 @@
 
   @media (max-width: 768px) {
     font-size: 1.8rem;
+  }
+
+  &:hover {
+    background-color: #4c4c4c;
   }
 }

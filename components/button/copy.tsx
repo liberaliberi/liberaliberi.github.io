@@ -14,7 +14,7 @@ export const CopyButton = ({ url }: { url: string }) => {
 
   return (
     <button
-      style={{ cursor: "pointer", backgroundColor: "transparent", border: 0 }}
+      style={{ cursor: "pointer", backgroundColor: "transparent", border: 0, padding: 0 }}
       onClick={copyUrl}
       className=".copyLink"
     >
