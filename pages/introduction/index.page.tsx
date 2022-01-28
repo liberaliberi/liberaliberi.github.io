@@ -10,7 +10,6 @@ export default function Introduction() {
   return (
     <div className={styles.page}>
       <Nav />
-      <div></div>
       <section className={styles.header}>
         <picture className={styles.header__img}>
           <source srcSet="/landing1x.webp" type="image/webp" />

@@ -24,7 +24,7 @@ export default function Summary() {
     <>
       {summaryData.map(({ icon, summary, title }: SummaryTemplateProps) => (
         <div>
-          <Template icon={icon} summary={summary} title={title} />
+          <Template icon={icon} key={icon} summary={summary} title={title} />
         </div>
       ))}
     </>
