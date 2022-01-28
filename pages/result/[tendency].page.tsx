@@ -4,13 +4,14 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { Logo } from "../../components/logo";
 import { LinkButton } from "../../components/button/link";
 import styles from "../../styles/result.module.scss";
+import SEOHead from "../../components/seo";
+import { HorizonBar } from "../../components/bar/horizon";
+import { event } from "../../components/react-ga/handler";
 
 import { result, UserTendency } from "./result";
 import Share from "./share";
 import Tendency from "./tendency/inedex";
 import Description from "./description";
-import SEOHead from "../../components/seo";
-import { HorizonBar } from "../../components/bar/horizon";
 
 interface ResultProps {
   tendency: UserTendency;
@@ -61,6 +62,7 @@ export default function Result({ tendency }: ResultProps) {
           <LinkButton
             href="/introduction"
             name="나만의 쉽고 가까운 정원, 더 알아보러 가기"
+            onClick={() => event({ action: "move_introduction" })}
           />
         </footer>
         <div className={styles.logo}>
