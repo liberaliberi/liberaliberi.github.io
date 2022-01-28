@@ -8,12 +8,17 @@
 }
 
 .serviceButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   background: #ead87b;
   border-radius: 30px;
   width: 20.3rem;
   height: 51px;
   font-size: 1.9rem;
   font-weight: 700;
+  border-color: #000;
+  color: #000;
 }
 
 .header {
@@ -39,8 +44,8 @@
         object-position: 85% 50%;
       }
 
-      @media (max-width: 425px) {
-        height: 50rem;
+      @media (max-width: 426px) {
+        height: 43rem;
         object-fit: none;
         object-position: 85% 70%;
       }
@@ -60,7 +65,7 @@
         font-size: 5.5rem;
       }
 
-      @media (max-width: 425px) {
+      @media (max-width: 426px) {
         font-size: 2.6rem;
       }
     }
@@ -103,10 +108,10 @@
     padding: 2.7rem 0;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 426px) {
     font-weight: bold;
     font-size: 1.2rem;
-    padding: 5rem 0;
+    padding: 5rem 15px;
   }
 }
 
@@ -115,7 +120,7 @@
   padding: 9.5rem 0 12.3rem;
   width: 100%;
 
-  @media (max-width: 425px) {
+  @media (max-width: 426px) {
     padding-bottom: 19px;
   }
 
@@ -125,7 +130,7 @@
     color: rgba(0, 0, 0, 0.89);
     margin-top: 0;
 
-    @media (max-width: 425px) {
+    @media (max-width: 426px) {
       font-weight: 700;
       font-size: 1.5rem;
     }
@@ -136,7 +141,7 @@
     font-size: 2.6rem;
     line-height: 4.5rem;
     color: #222222;
-    @media (max-width: 425px) {
+    @media (max-width: 426px) {
       font-weight: 700;
       font-size: 1.2rem;
     }
@@ -161,7 +166,7 @@
     max-width: 1440px;
     margin: 14.6rem auto 0;
 
-    @media (max-width: 425px) {
+    @media (max-width: 426px) {
       margin-top: 4.3rem;
       display: flex;
       flex: 1;
@@ -180,7 +185,7 @@
     border-radius: 25px;
     margin: 0 auto;
 
-    @media (max-width: 425px) {
+    @media (max-width: 426px) {
       width: 6.5rem;
       height: 6.5rem;
       & > img {
@@ -196,7 +201,7 @@
     color: rgba(0, 0, 0, 0.89);
     margin: 25px 0 14px;
 
-    @media (max-width: 425px) {
+    @media (max-width: 426px) {
       font-weight: 700;
       font-size: 1.2rem;
     }
@@ -208,8 +213,9 @@
     line-height: 2.8rem;
     color: rgba(85, 85, 85, 0.89);
     max-width: 25.6rem;
-    @media (max-width: 425px) {
+    @media (max-width: 426px) {
       font-size: 1rem;
+      padding-bottom: 20px;
     }
   }
 }
@@ -226,7 +232,7 @@
     color: rgba(255, 255, 255, 0.89);
     margin: 0 auto;
 
-    @media (max-width: 425px) {
+    @media (max-width: 426px) {
       font-size: 2rem;
     }
   }
@@ -248,7 +254,7 @@
   color: #606060;
   height: 8.3rem;
 
-  @media (max-width: 425px) {
+  @media (max-width: 426px) {
     font-size: 0.7rem;
     height: 3.5rem;
   }

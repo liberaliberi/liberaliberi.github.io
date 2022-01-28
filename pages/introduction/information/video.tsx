@@ -5,6 +5,8 @@ export default function Video() {
         controls
         autoPlay
         muted
+        playsInline
+        loop
       >
         <source src="/introduction.webm" type="video/webm" />
         <source src="/introduction.mp4" type="video/mp4" />

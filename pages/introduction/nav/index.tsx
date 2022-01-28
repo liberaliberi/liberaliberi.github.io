@@ -1,8 +1,13 @@
 import Image from "next/image";
 
 import styles from "../../../styles/introduction.module.scss";
+import { event } from "../../../components/react-ga/handler";
 
 export default function Nav() {
+  const onClick = () => {
+    event({ action: "signup" });
+  };
+
   return (
     <div className={styles.nav}>
       <Image src="/logo.svg" width={85.31} height={20.94} alt="요즘정원" />
@@ -16,10 +21,10 @@ export default function Nav() {
           회사소개
         </a>
         <a
-          href="https://forms.gle/HYYME6d6S2NhnoU5A"
+          onClick={onClick}
+          href={process.env.NEXT_PUBLIC_GOOGLE_FORM}
           className={styles.nav__link__signup}
           target="_blank"
-          rel="noreferrer"
         >
           가입하기
         </a>
