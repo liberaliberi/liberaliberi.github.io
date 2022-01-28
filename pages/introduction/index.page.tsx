@@ -4,18 +4,17 @@ import Footer from "./footer";
 import Header from "./header.tsx";
 import Information from "./information";
 import Introduce from "./introduce";
-import Nav from "./nav";
+import Layout from "./layout";
 
 export default function Introduction() {
   return (
-    <div className={styles.page}>
-      <Nav />
-      <section className={styles.header}>
+    <Layout>
+      <header className={styles.header}>
         <picture className={styles.header__img}>
           <source srcSet="/landing1x.webp" type="image/webp" />
           <img src="/landing1x.png" alt="" width="100%" height="100%" />
         </picture>
-      </section>
+      </header>
       <section className={styles.header__title}>
         <Header />
       </section>
@@ -28,9 +27,6 @@ export default function Introduction() {
       <section style={{ backgroundColor: "#171D21", width: "100%" }}>
         <Footer />
       </section>
-      <footer className={styles.copyright}>
-        ©2022. sooyeonkwon all rights reserved
-      </footer>
-    </div>
+    </Layout>
   );
 }
