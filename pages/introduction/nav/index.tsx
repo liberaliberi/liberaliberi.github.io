@@ -15,7 +15,7 @@ export default function Nav() {
         <a
           href="https://libera-liberi.notion.site/Libera-Liberi-cee12d5801be428296620055c62e6982"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener"
           className={styles.nav__link__introduce}
         >
           회사소개
