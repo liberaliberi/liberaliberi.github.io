@@ -6,17 +6,20 @@ interface FBShareButtonProps {
 
 export default function FBShareButton({ url }: FBShareButtonProps) {
   return (
-      <div
-        className="fb-share-button"
-        data-href={url}
-        data-layout="button"
+    <div className="fb-share-button" data-href={url} data-layout="button">
+      <a
+        rel="noopener"
+        target="_blank"
+        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(url)}`}
       >
-        <a
-          target="_blank"
-          href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(url)}`}
-        >
-          <Image alt="facebook share" width={46} height={46} src="/facebook.svg" loading="eager" />
-        </a>
-      </div>
+        <Image
+          alt="facebook share"
+          width={46}
+          height={46}
+          src="/facebook.svg"
+          loading="eager"
+        />
+      </a>
+    </div>
   );
 }

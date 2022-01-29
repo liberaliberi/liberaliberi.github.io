@@ -21,6 +21,7 @@ export default function Nav() {
           회사소개
         </a>
         <a
+          rel="noopener"
           onClick={onClick}
           href={process.env.NEXT_PUBLIC_GOOGLE_FORM}
           className={styles.nav__link__signup}

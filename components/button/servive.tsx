@@ -13,6 +13,7 @@ export const ServiceButton = ({ href, name }: LinkButtonProps) => {
 
   return (
     <a
+      rel="noopener"
       onClick={onClick}
       className={styles.serviceButton}
       href={href}
