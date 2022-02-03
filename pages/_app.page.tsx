@@ -2,9 +2,10 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Script from "next/script";
+import { useEffect } from "react";
 
 import { pageview } from "../components/react-ga/handler";
-import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -45,6 +46,14 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <main className="main-layout">
         <Component {...pageProps} />
+        <ins
+          className="kakao_ad_area"
+          style={{ display: "none" }}
+          data-ad-unit={process.env.NEXT_PUBLIC_ADD_FIT} //AdFit에서 발급 받은 광고단위코드 값
+          data-ad-width="320"
+          data-ad-height="50"
+          // data-ad-onfail="callBackFunc"
+        ></ins>
       </main>
     </>
   );

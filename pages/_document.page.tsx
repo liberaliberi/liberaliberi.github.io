@@ -40,23 +40,15 @@ class MyDocument extends Document {
       `,
             }}
           />
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-          <ins
-            className="kakao_ad_area"
-            style={{ display: "none", marginTop: 30 }}
-            data-ad-unit={process.env.NEXT_PUBLIC_ADD_FIT} //AdFit에서 발급 받은 광고단위코드 값
-            data-ad-width="320"
-            data-ad-height="50" 
-            // data-ad-onfail="callBackFunc"
-          ></ins>
           <script
             type="text/javascript"
             src="//t1.daumcdn.net/kas/static/ba.min.js"
             async
           ></script>
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
         </body>
       </Html>
     );
