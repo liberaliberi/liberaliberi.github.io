@@ -45,11 +45,7 @@ class MyDocument extends Document {
             src="//t1.daumcdn.net/kas/static/ba.min.js"
             async
           ></script>
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-          <!-- Channel Plugin Scripts -->
+                    <!-- Channel Plugin Scripts -->
           <script>
             (function() {
               var w = window;
@@ -91,6 +87,10 @@ class MyDocument extends Document {
             });
           </script>
           <!-- End Channel Plugin -->
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
         </body>
       </Html>
     );
