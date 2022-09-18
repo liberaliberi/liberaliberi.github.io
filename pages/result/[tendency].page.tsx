@@ -2,11 +2,10 @@ import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticProps } from "next";
 
 import { Logo } from "../../components/logo";
-import { LinkButton } from "../../components/button/link";
+import buttonStyles from '../../styles/button.module.scss';
 import styles from "../../styles/result.module.scss";
 import SEOHead from "../../components/seo";
 import { HorizonBar } from "../../components/bar/horizon";
-import { event } from "../../components/react-ga/handler";
 
 import { result, UserTendency } from "./result";
 import Share from "./share";
@@ -60,11 +59,9 @@ export default function Result({ tendency }: ResultProps) {
           />
         </section>
         <footer className={styles.footer}>
-          <LinkButton
-            href="/introduction"
-            name="나만의 쉽고 가까운 정원, 더 알아보러 가기"
-            onClick={() => event({ action: "move_introduction" })}
-          />
+          <a className={buttonStyles.link} href="https://yosmgarden.com">
+            나만의 쉽고 가까운 정원, 더 알아보러 가기
+          </a>
         </footer>
         <div className={styles.logo}>
           <Logo />
