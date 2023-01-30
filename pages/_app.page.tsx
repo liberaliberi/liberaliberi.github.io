@@ -46,14 +46,14 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <main className="main-layout">
         <Component {...pageProps} />
-        <ins
+        {/* <ins
           className="kakao_ad_area"
           style={{ display: "none" }}
           data-ad-unit={process.env.NEXT_PUBLIC_ADD_FIT} //AdFit에서 발급 받은 광고단위코드 값
           data-ad-width="320"
           data-ad-height="50"
           // data-ad-onfail="callBackFunc"
-        ></ins>
+        ></ins> */}
       </main>
     </>
   );
